@@ -1,0 +1,30 @@
+{
+  "name": "token-contract-exercise",
+  "version": "1.0.0",
+  "description": "Token Contract Exercise for XPR Migration",
+  "main": "contract.ts",
+  "scripts": {
+    "build": "npx proton-asc contract.ts > /dev/null 2>&1; echo 'Build completed. Check target/ directory for generated files.'",
+    "clean": "rm -rf target/",
+    "be": "ts-node be.ts",
+    "be:dev": "ts-node --watch be.ts"
+  },
+  "devDependencies": {
+    "@proton/vert": "^0.3.24",
+    "@types/chai": "^5.2.2",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^20.0.0",
+    "chai": "^6.2.0",
+    "mocha": "^11.7.4",
+    "proton-asc": "^0.2.100",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@proton/js": "^28.1.2",
+    "proton-tsc": "^0.3.58"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

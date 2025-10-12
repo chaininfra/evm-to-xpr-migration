@@ -1,0 +1,179 @@
+{
+  "version": "eosio::abi/1.2",
+  "structs": [
+    {
+      "name": "Proposal",
+      "base": "",
+      "fields": [
+        {
+          "name": "id",
+          "type": "uint64"
+        },
+        {
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "name": "creator",
+          "type": "name"
+        },
+        {
+          "name": "yesVotes",
+          "type": "uint64"
+        },
+        {
+          "name": "noVotes",
+          "type": "uint64"
+        },
+        {
+          "name": "isActive",
+          "type": "bool"
+        }
+      ]
+    },
+    {
+      "name": "Vote",
+      "base": "",
+      "fields": [
+        {
+          "name": "id",
+          "type": "uint64"
+        },
+        {
+          "name": "proposalId",
+          "type": "uint64"
+        },
+        {
+          "name": "voter",
+          "type": "name"
+        },
+        {
+          "name": "voteChoice",
+          "type": "bool"
+        }
+      ]
+    },
+    {
+      "name": "clear",
+      "base": "",
+      "fields": []
+    },
+    {
+      "name": "close",
+      "base": "",
+      "fields": [
+        {
+          "name": "proposalId",
+          "type": "uint64"
+        },
+        {
+          "name": "closer",
+          "type": "name"
+        }
+      ]
+    },
+    {
+      "name": "create",
+      "base": "",
+      "fields": [
+        {
+          "name": "creator",
+          "type": "name"
+        },
+        {
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "name": "description",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "delete",
+      "base": "",
+      "fields": [
+        {
+          "name": "proposalId",
+          "type": "uint64"
+        },
+        {
+          "name": "deleter",
+          "type": "name"
+        }
+      ]
+    },
+    {
+      "name": "vote",
+      "base": "",
+      "fields": [
+        {
+          "name": "voter",
+          "type": "name"
+        },
+        {
+          "name": "proposalId",
+          "type": "uint64"
+        },
+        {
+          "name": "voteChoice",
+          "type": "bool"
+        }
+      ]
+    }
+  ],
+  "types": [],
+  "actions": [
+    {
+      "name": "clear",
+      "type": "clear",
+      "ricardian_contract": ""
+    },
+    {
+      "name": "close",
+      "type": "close",
+      "ricardian_contract": ""
+    },
+    {
+      "name": "create",
+      "type": "create",
+      "ricardian_contract": ""
+    },
+    {
+      "name": "delete",
+      "type": "delete",
+      "ricardian_contract": ""
+    },
+    {
+      "name": "vote",
+      "type": "vote",
+      "ricardian_contract": ""
+    }
+  ],
+  "tables": [
+    {
+      "name": "proposals",
+      "type": "Proposal",
+      "index_type": "i64",
+      "key_names": [],
+      "key_types": []
+    },
+    {
+      "name": "votes",
+      "type": "Vote",
+      "index_type": "i64",
+      "key_names": [],
+      "key_types": []
+    }
+  ],
+  "ricardian_clauses": [],
+  "variants": [],
+  "action_results": [],
+  "abi_extensions": [],
+  "error_messages": []
+}

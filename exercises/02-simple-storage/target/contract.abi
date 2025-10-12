@@ -1,0 +1,152 @@
+{
+  "version": "eosio::abi/1.2",
+  "structs": [
+    {
+      "name": "History",
+      "base": "",
+      "fields": [
+        {
+          "name": "id",
+          "type": "uint64"
+        },
+        {
+          "name": "oldValue",
+          "type": "uint64"
+        },
+        {
+          "name": "newValue",
+          "type": "uint64"
+        },
+        {
+          "name": "updater",
+          "type": "name"
+        }
+      ]
+    },
+    {
+      "name": "State",
+      "base": "",
+      "fields": [
+        {
+          "name": "id",
+          "type": "uint64"
+        },
+        {
+          "name": "value",
+          "type": "uint64"
+        },
+        {
+          "name": "lastUpdater",
+          "type": "name"
+        },
+        {
+          "name": "lastHistoryId",
+          "type": "uint64"
+        }
+      ]
+    },
+    {
+      "name": "decrement",
+      "base": "",
+      "fields": [
+        {
+          "name": "actor",
+          "type": "name"
+        }
+      ]
+    },
+    {
+      "name": "get",
+      "base": "",
+      "fields": []
+    },
+    {
+      "name": "gethistory",
+      "base": "",
+      "fields": []
+    },
+    {
+      "name": "getlastupdt",
+      "base": "",
+      "fields": []
+    },
+    {
+      "name": "increment",
+      "base": "",
+      "fields": [
+        {
+          "name": "actor",
+          "type": "name"
+        }
+      ]
+    },
+    {
+      "name": "set",
+      "base": "",
+      "fields": [
+        {
+          "name": "actor",
+          "type": "name"
+        },
+        {
+          "name": "value",
+          "type": "uint64"
+        }
+      ]
+    }
+  ],
+  "types": [],
+  "actions": [
+    {
+      "name": "decrement",
+      "type": "decrement",
+      "ricardian_contract": ""
+    },
+    {
+      "name": "get",
+      "type": "get",
+      "ricardian_contract": ""
+    },
+    {
+      "name": "gethistory",
+      "type": "gethistory",
+      "ricardian_contract": ""
+    },
+    {
+      "name": "getlastupdt",
+      "type": "getlastupdt",
+      "ricardian_contract": ""
+    },
+    {
+      "name": "increment",
+      "type": "increment",
+      "ricardian_contract": ""
+    },
+    {
+      "name": "set",
+      "type": "set",
+      "ricardian_contract": ""
+    }
+  ],
+  "tables": [
+    {
+      "name": "history",
+      "type": "History",
+      "index_type": "i64",
+      "key_names": [],
+      "key_types": []
+    },
+    {
+      "name": "state",
+      "type": "State",
+      "index_type": "i64",
+      "key_names": [],
+      "key_types": []
+    }
+  ],
+  "ricardian_clauses": [],
+  "variants": [],
+  "action_results": [],
+  "abi_extensions": [],
+  "error_messages": []
+}

@@ -1,0 +1,62 @@
+{
+  "version": "eosio::abi/1.2",
+  "structs": [
+    {
+      "name": "getinfo",
+      "base": "",
+      "fields": []
+    },
+    {
+      "name": "greet",
+      "base": "",
+      "fields": [
+        {
+          "name": "name",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "sayhello",
+      "base": "",
+      "fields": []
+    }
+  ],
+  "types": [],
+  "actions": [
+    {
+      "name": "getinfo",
+      "type": "getinfo",
+      "ricardian_contract": ""
+    },
+    {
+      "name": "greet",
+      "type": "greet",
+      "ricardian_contract": ""
+    },
+    {
+      "name": "sayhello",
+      "type": "sayhello",
+      "ricardian_contract": ""
+    }
+  ],
+  "tables": [],
+  "ricardian_clauses": [],
+  "variants": [],
+  "action_results": [
+    {
+      "name": "sayhello",
+      "result_type": "string"
+    },
+    {
+      "name": "greet",
+      "result_type": "string"
+    },
+    {
+      "name": "getinfo",
+      "result_type": "string"
+    }
+  ],
+  "abi_extensions": [],
+  "error_messages": []
+}
