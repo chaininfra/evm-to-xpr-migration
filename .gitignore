@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Build output — keep only the deployable artifacts
+exercises/*/target/**
+!exercises/*/target/
+!exercises/*/target/contract.wasm
+!exercises/*/target/contract.abi
+
+# OS / editor noise
+.DS_Store
+*.log
+*.tmp
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Backup files
+*.bk
+*.bak
+*.orig

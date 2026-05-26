@@ -373,8 +373,8 @@ export class erc20like extends Contract {
 
         let stat = this.statTable.first();
         if (stat == null) {
-            // Lần đầu mint: issuer = người gọi action
-            const issuer = Name.fromString("chaininfradv"); // hoặc dùng this.receiver
+            // First mint: issuer = the account calling the action
+            const issuer = Name.fromString("chaininfradv"); // or use this.receiver
             stat = new Stat(quantity.symbol, new Asset(0, quantity.symbol), issuer);
             this.statTable.store(stat, this.receiver);
         }

@@ -119,10 +119,10 @@ describe('HelloWorld Contract Tests with VeRT', () => {
 
 ### Technical Implementation:
 - **Robust Export Finding**: Fuzzy matching for function names
-- **Safe Memory Reading**: Boundary checks và null terminator detection
+- **Safe Memory Reading**: Boundary checks and null terminator detection
 - **Enhanced Mock Imports**: Better parameter handling simulation
 - **Return Value Capture**: Mock set_action_return_value for testing
-- **CI-Friendly**: Increased timeouts và lenient thresholds
+- **CI-Friendly**: Increased timeouts and lenient thresholds
 
 ## Requirements
 
@@ -167,7 +167,7 @@ Current VeRT test suite includes:
 
 - **7 tests passing** - All core functionality verified
 - **Function existence** - sayHello, greet, getInfo functions found
-- **Basic execution** - sayHello và getInfo execute successfully
+- **Basic execution** - sayHello and getInfo execute successfully
 - **Memory management** - WebAssembly memory access working
 - **Performance** - Fast initialization (< 2 seconds)
 - **Export discovery** - Robust function finding with fuzzy matching

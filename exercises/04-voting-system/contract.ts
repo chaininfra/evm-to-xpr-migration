@@ -260,7 +260,7 @@ export class VotingContract extends Contract {
   clearAll(): void {
     requireAuth(this.receiver);
 
-    // Xóa tất cả votes
+    // Remove all votes
     let vote = this.votesTable.first();
     while (vote != null) {
       const nextVote = this.votesTable.next(vote);
@@ -268,7 +268,7 @@ export class VotingContract extends Contract {
       vote = nextVote;
     }
 
-    // Xóa tất cả proposals
+    // Remove all proposals
     let proposal = this.proposalsTable.first();
     while (proposal != null) {
       const nextProposal = this.proposalsTable.next(proposal);

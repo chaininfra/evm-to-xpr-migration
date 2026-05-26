@@ -251,19 +251,19 @@ export class Counter extends Contract {
   }
 
   /**
-   * Increment action - Tăng counter lên 1
-   * 
-   * Thực hiện:
-   * 1. Kiểm tra authorization của actor
-   * 2. Tính toán giá trị mới (value + 1)
-   * 3. Kiểm tra overflow protection
-   * 4. Ghi history và update state
-   * 
-   * @param {Name} actor - Account thực hiện action (phải có quyền)
-   * 
+   * Increment action - Increase counter by 1
+   *
+   * Process:
+   * 1. Check authorization of actor
+   * 2. Compute new value (value + 1)
+   * 3. Check overflow protection
+   * 4. Write history and update state
+   *
+   * @param {Name} actor - Account performing the action (must have permission)
+   *
    * @example
    * ```typescript
-   * counter.increment("alice"); // Tăng counter lên 1
+   * counter.increment("alice"); // Increase counter by 1
    * ```
    */
   @action("increment")
@@ -283,19 +283,19 @@ export class Counter extends Contract {
   }
 
   /**
-   * Decrement action - Giảm counter xuống 1
-   * 
-   * Thực hiện:
-   * 1. Kiểm tra authorization của actor
-   * 2. Kiểm tra không được giảm xuống dưới MIN_VALUE
-   * 3. Tính toán giá trị mới (value - 1)
-   * 4. Kiểm tra bounds và ghi history
-   * 
-   * @param {Name} actor - Account thực hiện action (phải có quyền)
-   * 
+   * Decrement action - Decrease counter by 1
+   *
+   * Process:
+   * 1. Check authorization of actor
+   * 2. Verify value is not already at MIN_VALUE
+   * 3. Compute new value (value - 1)
+   * 4. Check bounds and write history
+   *
+   * @param {Name} actor - Account performing the action (must have permission)
+   *
    * @example
    * ```typescript
-   * counter.decrement("alice"); // Giảm counter xuống 1
+   * counter.decrement("alice"); // Decrease counter by 1
    * ```
    */
   @action("decrement")
@@ -316,18 +316,18 @@ export class Counter extends Contract {
   }
 
   /**
-   * Get History action - Xem thông tin về history entry cuối cùng
-   * 
-   * Action này in ra thông tin của history entry cuối cùng bao gồm:
-   * - ID của entry
-   * - Giá trị cũ và mới
-   * - Account thực hiện thay đổi
-   * 
-   * Lưu ý: Để xem toàn bộ history, cần sử dụng table query tools off-chain
-   * 
+   * Get History action - View info about the most recent history entry
+   *
+   * Prints info about the most recent history entry including:
+   * - Entry ID
+   * - Old and new values
+   * - Account that made the change
+   *
+   * Note: To view the full history, use off-chain table query tools.
+   *
    * @example
    * ```typescript
-   * counter.getHistory(); // In ra thông tin history cuối
+   * counter.getHistory(); // Prints info for the latest history entry
    * ```
    */
   @action("gethistory")
@@ -344,20 +344,20 @@ export class Counter extends Contract {
   }
 
   /**
-   * Get Last Updater action - Xem account thực hiện thay đổi cuối cùng
-   * 
-   * Action này in ra tên account của người thực hiện thay đổi cuối cùng.
-   * Nếu chưa có thay đổi nào, sẽ in "no updates yet".
-   * 
+   * Get Last Updater action - View the account that made the most recent change
+   *
+   * Prints the account name of the last updater.
+   * If no changes have been made yet, prints "no updates yet".
+   *
    * @example
    * ```typescript
-   * counter.getLastUpdater(); // In ra: lastUpdater=alice
+   * counter.getLastUpdater(); // Prints: lastUpdater=alice
    * ```
    */
   @action("getlastupdt")
   getLastUpdater(): void {
     const s = this.getOrInitState();
-    // Nếu chưa có history, nghĩa là chưa có updater nào
+    // If history is empty, no updater has been recorded yet
     const last = this.historyTable.last();
     if (!last) {
       print("no updates yet");
